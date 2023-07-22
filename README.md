@@ -30,7 +30,7 @@ Access tokens have a limited expiration time, after which the user can refresh t
 If a user forgets their password, they can initiate the password reset process, which sends a reset link to their registered email address.
 Technologies Used
 JAVA: Backend runtime environment for building the API server.
-Spring/Spring boot: Fast and minimalistic web application framework for Node.js.
+Spring/Spring boot: Fast and minimalistic web application framework.
 MySql: SQL database for storing user information and tokens.
 JWT: JSON Web Tokens for securing API endpoints and managing user authentication.
 
