@@ -24,20 +24,20 @@ public class CustomExceptionHandler {
     @ExceptionHandler(ResourceExistsException.class)
     public ResponseEntity<GenericResponse> resourceExistsException(ResourceExistsException exception) {
         return  ResponseEntity.badRequest().body(GenericResponse.builder()
-                .statusCode(HttpStatus.BAD_REQUEST.value())
+                .statusCode(HttpStatus.CONFLICT.value())
                 .message(exception.getMessage())
                 .time(LocalDateTime.now())
-                .status(HttpStatus.BAD_REQUEST)
+                .status(HttpStatus.CONFLICT)
                 .build());
     }
 
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<GenericResponse> resourceNotFoundException(ResourceNotFoundException exception) {
         return  ResponseEntity.badRequest().body(GenericResponse.builder()
-                .statusCode(HttpStatus.BAD_REQUEST.value())
+                .statusCode(HttpStatus.NOT_FOUND.value())
                 .message(exception.getMessage())
                 .time(LocalDateTime.now())
-                .status(HttpStatus.BAD_REQUEST)
+                .status(HttpStatus.NOT_FOUND)
                 .build());
     }
 }

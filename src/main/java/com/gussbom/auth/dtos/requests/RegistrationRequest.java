@@ -7,7 +7,7 @@ import jakarta.validation.constraints.NotEmpty;
 
 @Data
 @Valid
-public class AuthRequest {
+public class RegistrationRequest {
     @NotEmpty(message = "username cannot be empty")
     private String username;
     @NotEmpty(message = "email cannot be empty")

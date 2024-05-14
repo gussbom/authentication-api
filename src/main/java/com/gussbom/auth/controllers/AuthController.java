@@ -1,6 +1,6 @@
 package com.gussbom.auth.controllers;
 
-import com.gussbom.auth.dtos.requests.AuthRequest;
+import com.gussbom.auth.dtos.requests.RegistrationRequest;
 import com.gussbom.auth.dtos.requests.LoginRequest;
 import com.gussbom.auth.dtos.responses.GenericResponse;
 import com.gussbom.auth.services.AuthServices;
@@ -17,7 +17,7 @@ public class AuthController {
     private final AuthServices authServices;
 
     @PostMapping("/register")
-    public ResponseEntity<GenericResponse> userRegistration(@RequestBody AuthRequest request){
+    public ResponseEntity<GenericResponse> userRegistration(@RequestBody RegistrationRequest request){
         GenericResponse response = authServices.userRegistration(request);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
