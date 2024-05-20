@@ -16,7 +16,7 @@ public class CustomExceptionHandler {
         return  ResponseEntity.badRequest().body(GenericResponse.builder()
                 .statusCode(HttpStatus.BAD_REQUEST.value())
                 .message(exception.getMessage())
-                .time(LocalDateTime.now())
+                .time(LocalDateTime.now().toString())
                 .status(HttpStatus.BAD_REQUEST)
                 .build());
     }
@@ -26,7 +26,7 @@ public class CustomExceptionHandler {
         return  ResponseEntity.badRequest().body(GenericResponse.builder()
                 .statusCode(HttpStatus.CONFLICT.value())
                 .message(exception.getMessage())
-                .time(LocalDateTime.now())
+                .time(LocalDateTime.now().toString())
                 .status(HttpStatus.CONFLICT)
                 .build());
     }
@@ -36,7 +36,7 @@ public class CustomExceptionHandler {
         return  ResponseEntity.badRequest().body(GenericResponse.builder()
                 .statusCode(HttpStatus.NOT_FOUND.value())
                 .message(exception.getMessage())
-                .time(LocalDateTime.now())
+                .time(LocalDateTime.now().toString())
                 .status(HttpStatus.NOT_FOUND)
                 .build());
     }

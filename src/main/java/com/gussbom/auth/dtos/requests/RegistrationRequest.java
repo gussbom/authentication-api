@@ -1,5 +1,6 @@
 package com.gussbom.auth.dtos.requests;
 
+import com.gussbom.auth.enums.UserRole;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import lombok.Data;
@@ -15,4 +16,5 @@ public class RegistrationRequest {
     private String email;
     @NotEmpty(message = "password cannot be empty")
     private String password;
+    private UserRole role;
 }

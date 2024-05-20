@@ -1,5 +1,6 @@
 package com.gussbom.auth.entities;
 
+import com.gussbom.auth.enums.TokenType;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -18,5 +19,10 @@ public class Token extends BaseEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String token;
-    private LocalDateTime expirationTime;
+    @Enumerated(EnumType.STRING)
+    private TokenType type;
+    private boolean expired;
+    @ManyToOne
+    @JoinColumn(name="user_id")
+    private AppUser user;
 }
